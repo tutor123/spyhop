@@ -72,7 +72,14 @@ class Api:
         containers = cli.containers()
         return containers
 
-
+    def get_container_start(self,container_id):
+	cli = self.connection
+	response=cli.start(container_id)
+	return response
+    def get_container_stop(self,container_id):
+	cli=self.connection
+	response_stop=cli.stop(container_id)
+        return response_stop	
 def main():
     pass
 

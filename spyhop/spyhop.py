@@ -33,6 +33,9 @@ def index():
 @app.route('/api/ps')
 def ps():
     all_containers = docker_api.get_all_containers()
+    all_containers[0]["start"] = "test"
+    all_containers[0]["stop"] = "test"
+    print all_containers
     return jsonify({"data": all_containers})
 
 
